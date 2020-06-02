@@ -1,9 +1,9 @@
-import express from 'express';
+import express from "express";
+import routes from "./routes";
 
-const app = express()
+const app = express();
 
-app.get("/users", (request, response) => {
-  response.send('Hello World')
-})
+app.use(express.json());
+app.use(routes);
 
-app.listen(3333)
+app.listen(3333);
