@@ -1,13 +1,16 @@
-import React from 'react';
-import GlobalStyle from './GlobalStyled'
+import React from "react";
+import ReactNotification from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
 
-import Home from './pages/Home'
+import "./App.css";
+
+import Routes from "./routes";
 
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <Home />
+      <ReactNotification />
+      <Routes />
     </>
   );
 }
