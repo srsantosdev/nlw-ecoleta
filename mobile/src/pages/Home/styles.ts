@@ -1,10 +1,8 @@
 import styled from "styled-components/native";
-import { RectButton } from "react-native-gesture-handler";
 
 export const Container = styled.ImageBackground`
   flex: 1;
   padding: 32px;
-  background-color: #f0f0f5;
 `;
 
 export const Logo = styled.Image``;
