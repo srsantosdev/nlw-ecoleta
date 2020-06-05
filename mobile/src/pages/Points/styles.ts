@@ -72,6 +72,7 @@ export const Item = styled.TouchableOpacity`
   background-color: #fff;
   border-width: 2px;
   border-color: #eee;
+
   height: 120px;
   width: 120px;
   border-radius: 8px;
@@ -82,7 +83,7 @@ export const Item = styled.TouchableOpacity`
   text-align: center;
 `;
 
-export const SelectedItem = styled.View`
+export const SelectedItem = styled(Item)`
   border-color: #34cb79;
   border-width: 2px;
 `;
