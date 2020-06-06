@@ -20,6 +20,10 @@
 O **Ecoleta** uma forma de conectar entidades de coleta de resíduos orgânicos e inorgânicos às pessoas que precisam descartar resíduos de maneira ecológica. 
 Projeto desenvolvido durante a **Next Level Week** oferecida pela [Rocketseat](https://rocketseat.com.br/).
 
+<p align="center">
+  <img src="./ecoleta.gif" alt="Ecoleta App">
+</p>
+
 ### 🛠 Tecnologias
 
 - [Node.js](https://nodejs.org/en/)
