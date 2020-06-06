@@ -56,3 +56,5 @@ export const ButtonText = styled.Text`
   font-family: Roboto_500Medium;
   font-size: 16px;
 `;
+
+export const Selects = styled.View``;

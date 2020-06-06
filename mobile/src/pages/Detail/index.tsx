@@ -84,7 +84,7 @@ const Detail: React.FC = () => {
 
         <PointName>{data?.point?.name}</PointName>
         <PointItems>
-          {data.items.map((item) => item.title).join("• ")}
+          {data.items.map((item) => item.title).join(" • ")}
         </PointItems>
 
         <Address>
