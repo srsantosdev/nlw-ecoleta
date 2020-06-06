@@ -10,7 +10,6 @@
 <img src="https://img.shields.io/badge/made%20by-srsantosdev-green?style=plastic">
 <img src="https://img.shields.io/github/last-commit/srsantosdev/nlw-ecoleta?style=plastic">
 <img src="https://img.shields.io/static/v1?label=Next%20Level%20Week&message=1.0&color=blueviolet&style=plastic">
-<img src="https://img.shields.io/packagist/l/srsantosdev/nlw-ecoleta?style=plastic">
 </h1>
 
 <p align="center">
