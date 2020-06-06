@@ -71,14 +71,6 @@ const Home: React.FC = () => {
       });
   }, [selectedUF]);
 
-  function handleSelectUF(event: ChangeEvent<HTMLSelectElement>) {
-    setSelectedUF(event.target.value);
-  }
-
-  function handleSelectCity(event: ChangeEvent<HTMLSelectElement>) {
-    setSelectedCity(event.target.value);
-  }
-
   return (
     <Container
       source={require("./../../assets/home-background.png")}
@@ -105,7 +97,14 @@ const Home: React.FC = () => {
             placeholder={{ label: "Selecione a Cidade", value: null }}
           />
         </Selects>
-        <Button onPress={() => navigation.navigate("Points")}>
+        <Button
+          onPress={() =>
+            navigation.navigate("Points", {
+              uf: selectedUF,
+              city: selectedCity,
+            })
+          }
+        >
           <ButtonIcon>
             <Icon name="arrow-right" color="#fff" size={24} />
           </ButtonIcon>

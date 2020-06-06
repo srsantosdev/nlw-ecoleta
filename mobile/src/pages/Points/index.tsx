@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ScrollView, TouchableOpacity, Alert } from "react-native";
 import { Feather as Icon } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { SvgUri } from "react-native-svg";
 import * as Location from "expo-location";
 
@@ -32,12 +32,21 @@ interface Point {
   id: number;
   name: string;
   image: string;
+  image_url: string;
   latitude: number;
   longitude: number;
 }
 
+interface Params {
+  uf: string;
+  city: string;
+}
+
 const Points: React.FC = () => {
   const navigation = useNavigation();
+  const route = useRoute();
+
+  const { uf, city } = route.params as Params;
 
   const [initialPosition, setInitialPosition] = useState<[number, number]>([
     0,
@@ -80,15 +89,15 @@ const Points: React.FC = () => {
     api
       .get("points", {
         params: {
-          city: "Feira de Santana",
-          uf: "BA",
-          items: [1, 3],
+          city,
+          uf,
+          items: selectedItems,
         },
       })
       .then((res) => {
         setPoints(res.data);
       });
-  }, []);
+  }, [selectedItems]);
 
   function handleSelectItem(id: number) {
     const alreadySelected = selectedItems.findIndex((item) => item === id);
@@ -137,7 +146,7 @@ const Points: React.FC = () => {
                     <MapMarkerImage
                       resizeMode="cover"
                       source={{
-                        uri: point.image,
+                        uri: point.image_url,
                       }}
                     />
                     <MapMarkerTitle>{point.name}</MapMarkerTitle>
