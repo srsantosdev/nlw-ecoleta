@@ -1,5 +1,5 @@
 import express from "express";
-
+import { celebrate, Joi } from "celebrate";
 import multer from "multer";
 import multerConfig from "./config/multer";
 
@@ -17,6 +17,28 @@ routes.get("/items", Items.index);
 
 routes.get("/points/:id", Points.show);
 routes.get("/points", Points.index);
-routes.post("/points", upload.single("image"), Points.create);
+
+routes.post(
+  "/points",
+  upload.single("image"),
+  celebrate(
+    {
+      body: Joi.object().keys({
+        name: Joi.string().required(),
+        email: Joi.string().required().email(),
+        whatsapp: Joi.string().required(),
+        latitude: Joi.number().required(),
+        longitude: Joi.number().required(),
+        city: Joi.string().required(),
+        uf: Joi.string().required().max(2),
+        items: Joi.string().required(),
+      }),
+    },
+    {
+      abortEarly: false,
+    }
+  ),
+  Points.create
+);
 
 export default routes;
